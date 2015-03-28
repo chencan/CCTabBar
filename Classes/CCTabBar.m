@@ -77,8 +77,6 @@
                 bottomViewFrame.origin.y = (self.frame.size.height - self.bottomViewHeight);
                 bottomViewFrame.size.height = self.bottomViewHeight;
                 
-                self.bottomView.backgroundColor = button.titleLabel.textColor;
-                
                 CGRect currentBottomViewFrame = self.bottomView.frame;
                 
                 if (self.animated && !CGRectEqualToRect(currentBottomViewFrame, CGRectZero)) {
