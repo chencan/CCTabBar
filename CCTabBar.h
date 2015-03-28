@@ -17,8 +17,8 @@
 @property (nonatomic, assign) float   tabOrigin;
 @property (nonatomic, assign) float   tabWidth;
 @property (nonatomic, assign) float   tabDistance;
+@property (nonatomic, assign) float   bottomViewHeight;
 @property (nonatomic, strong) UIView *bottomView;
-@property (nonatomic, assign) BOOL animated;
 
 - (void)setTabNum:(int)aTabNum;
 - (void)setTabOrigin:(float)aTabOrigin;

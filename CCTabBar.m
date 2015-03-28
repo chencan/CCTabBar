@@ -10,6 +10,7 @@
 @interface CCTabBar ()
 @property (nonatomic, readwrite, assign)     NSUInteger selectedIndex;
 @property (nonatomic, readwrite, strong)     NSMutableArray *tabButtonArray;
+@property (nonatomic, assign) BOOL animated;
 @end
 
 
@@ -23,6 +24,7 @@
         self.animated = YES;
         self.userInteractionEnabled = YES;
         self.selectedIndex = NSUIntegerMax;
+        self.bottomViewHeight = 1;
     }
     return self;
 }
@@ -67,23 +69,26 @@
         if (i == self.selectedIndex) {
             button.titleLabel.alpha = 1;
             
-            CGRect bottomViewFrame = button.frame;
-            bottomViewFrame.origin.y = (self.frame.size.height - 4);
-            bottomViewFrame.size.height = 2;
-            
-            self.bottomView.backgroundColor = button.titleLabel.textColor;
-            
-            CGRect currentBottomViewFrame = self.bottomView.frame;
-            
-            if (self.animated && !CGRectEqualToRect(currentBottomViewFrame, CGRectZero)) {
-                [UIView beginAnimations:nil context:nil];
+            if (bottomViewHeight > 0) {
+                CGRect bottomViewFrame = button.frame;
+                bottomViewFrame.origin.y = (self.frame.size.height - self.bottomViewHeight);
+                bottomViewFrame.size.height = self.bottomViewHeight;
+                
+                self.bottomView.backgroundColor = button.titleLabel.textColor;
+                
+                CGRect currentBottomViewFrame = self.bottomView.frame;
+                
+                if (self.animated && !CGRectEqualToRect(currentBottomViewFrame, CGRectZero)) {
+                    [UIView beginAnimations:nil context:nil];
+                }
+                self.bottomView.frame = bottomViewFrame;
+                if (self.animated && !CGRectEqualToRect(currentBottomViewFrame, CGRectZero)) {
+                    [UIView commitAnimations];
+                }
+                
+                self.animated = YES;
             }
-            self.bottomView.frame = bottomViewFrame;
-            if (self.animated && !CGRectEqualToRect(currentBottomViewFrame, CGRectZero)) {
-                [UIView commitAnimations];
-            }
-            
-            self.animated = YES;
+
         }
         
         i++;
