@@ -69,7 +69,7 @@
         if (i == self.selectedIndex) {
             button.titleLabel.alpha = 1;
             
-            if (bottomViewHeight > 0) {
+            if (self.bottomViewHeight > 0) {
                 CGRect bottomViewFrame = button.frame;
                 bottomViewFrame.origin.y = (self.frame.size.height - self.bottomViewHeight);
                 bottomViewFrame.size.height = self.bottomViewHeight;
