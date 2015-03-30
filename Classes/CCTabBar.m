@@ -23,7 +23,7 @@
         // Initialization code
         self.animated = YES;
         self.userInteractionEnabled = YES;
-        self.selectedIndex = NSUIntegerMax;
+        self.selectedIndex = 0;
         self.bottomViewHeight = 1;
         self.tabButtonArray = [[NSMutableArray alloc] initWithCapacity:2];
         self.bottomView = [[UIView alloc] initWithFrame:CGRectZero];
