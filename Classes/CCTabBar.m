@@ -43,7 +43,7 @@
     }
 }
 
-- (void)autoTouchTab:(int)index
+- (void)autoTouchTab:(NSUInteger)index
 {
     if (self.delegate) {
         [self setSelectedIndex:index animated:NO];
@@ -101,7 +101,7 @@
 #pragma mark -
 #pragma mark Public
 
-- (void)setTabNum:(int)aTabNum {
+- (void)setTabNum:(NSUInteger)aTabNum {
     
     if ([self.tabButtonArray count] != aTabNum) {
         if (aTabNum < [self.tabButtonArray count]) {
@@ -145,7 +145,7 @@
 }
 
 
-- (void)setSelectedIndex:(int)aSelectedIndex animated:(BOOL)anAniamted {
+- (void)setSelectedIndex:(NSUInteger)aSelectedIndex animated:(BOOL)anAniamted {
     if (aSelectedIndex != self.selectedIndex) {
         if (aSelectedIndex >= 0 && aSelectedIndex < [self.tabButtonArray count]) {
             self.selectedIndex = aSelectedIndex;

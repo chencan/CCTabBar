@@ -20,13 +20,13 @@
 @property (nonatomic, assign) float   bottomViewHeight;
 @property (nonatomic, strong) UIView *bottomView;
 
-- (void)setTabNum:(int)aTabNum;
+- (void)setTabNum:(NSUInteger)aTabNum;
 - (void)setTabOrigin:(float)aTabOrigin;
 - (void)setTabWidth:(float)aTabWidth;
 - (void)setTabDistance:(float)aTabDistance;
 
-- (void)setSelectedIndex:(int)aSelectedIndex animated:(BOOL)aniamted;
-- (void)autoTouchTab:(int)index;
+- (void)setSelectedIndex:(NSUInteger)aSelectedIndex animated:(BOOL)aniamted;
+- (void)autoTouchTab:(NSUInteger)index;
 @end
 
 
