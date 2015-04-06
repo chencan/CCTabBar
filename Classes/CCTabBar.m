@@ -60,7 +60,7 @@
     [super layoutSubviews];
     
     
-    CGRect tabFrame = CGRectMake(self.tabOrigin, 0, self.tabWidth, self.bounds.size.height);
+    CGRect tabFrame = CGRectMake(self.tabOrigin, 0, self.tabWidth, self.bounds.size.height - 0.5);
     
     int i = 0;
     for (UIButton *button in self.tabButtonArray) {
